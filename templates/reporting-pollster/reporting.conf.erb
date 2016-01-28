@@ -1,0 +1,20 @@
+[remote]
+user = <%= source_db_user %>
+password = <%= source_db_pass %>
+database = <%= source_db_name %>
+host = <%= source_db_host %>
+port = <%= source_db_port %>
+
+[local]
+user = <%= db_user %>
+password = <%= db_pass %>
+host = <%= db_host %>
+port = <%= db_port %>
+database = <%= db_name %>
+
+[nova]
+version = 2
+username = <%= nova_user %>
+api_key = <%= nova_pass %>
+auth_url = <%= keystone_auth_url %>
+project_id = <%= pollster_tenant %>

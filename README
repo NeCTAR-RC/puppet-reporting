@@ -1,0 +1,94 @@
+As noted in the meeting on 20151125, the packages aren't in any
+repository at the moment, but the files are on the demo servers and the
+configuration on those servers is what I'd call a model setup, based on
+the packaged configs with exactly the same modifications you'd use
+puppet to set up.
+
+----------
+
+Starting from the bottom . . .
+
+reporting-pollster
+------------------
+Package name: python-reporting-pollster (currently v0.1.0)
+Extra dependencies (outside the normal Ubuntu 14.04 NeCTAR
+repositories): python-mysql.connector >= 2.0.4.
+        - I've verified that the package from 15.10 installs without
+          issues
+Configuration: /etc/reporting-pollster/reporting.conf
+Config notes: The config file is just a set of three credentials, one
+for the source database, one for the local database, and a set of nova
+credentials, each in their own config section (i.e. [remote], [local],
+[nova]).
+Use: the update-db.py script (which I'm going to rename at some point
+soon, because I keep realising how stupid that name is), which is run
+thusly:
+update-db.py --config-file /etc/reporting-pollster/reporting.conf
+--full-run --debug
+(at least when I run it). It updates (where possible) from the time of
+the previous update for each table, so a normal run should be fairly
+quick. Use --force-update to reload /all/ the data (ten or twenty
+minutes).
+
+This code requires read-only access to the live database. I've talked
+with Sam about how to do that, and he's said that changes to the F5s are
+needed - I'm going to chase that up in more detail.
+
+The only other thing missing at the moment is a cron job to run it
+regularly. I don't really know what the timing we'll use is, since it
+depends on the exact impact on the system - that'll have to wait until
+it can be run against the live system.
+
+reporting-api
+-------------
+Package name: python-reporing-api (currently v0.1.0)
+Extra dependencies: python-mysql.connector >= 2.0.4, python-wsgicors >=
+0.4.1. Both the 15.10 packages work fine.
+Configuration: /etc/reporting-api/
+                        - apivi.ini
+                        - paste.config
+The apiv1.ini file specifies the credentials for the database, the
+keystone credentials and the keystone role that provides authorisation
+to access the API. The paste.config file is mostly internal, except for
+the [server] section at the bottom that specifies the listen address and
+port.
+There's an init file (/etc/init.d/reporting-api) that controls the
+service, and an /etc/default/reporting-api file specifying the arguments
+for the server script.
+The actual executable is called reporting-api, and is run like this:
+reporting-api --confdir /etc/reporting-api/
+--logfile /var/run/reporting-api.log
+
+reporting-view
+--------------
+Package name: reporting-view (currently v0.1.0)
+Extra dependencies: nothing, but the assumption is that it runs with
+apache and mod_wsgi.
+Configuration: /etc/reporting-view/config.js
+This requires only two things to be customised: the baseURL (the site's
+top level URL), and the endpoint, which needs to point at the API
+server. Simple and to the point ;-)
+There's a sample apache.conf file in /usr/share/doc/reporting-vew/ which
+in my testing needs exactly two changes to work: setting the ServerName
+and the ServerAdmin (of course, only the ServerName /needs/ to
+change . . .)
+The app itself is almost entirely javascript served
+from /usr/share/reporting-view/static, with a minimal python-flask based
+app to handle logging in.
+
+Other notes
+-----------
+I've got two instances up and working (mostly) with these packages and
+the instructions above. They're at 130.56.253.126 (api) and
+130.56.253.127 (view). There's a database with (reasonably) current data
+from the live system, which is what the API server is handing out. The
+view site isn't working at the moment (it bounces you back to the front
+page - I'll figure it out tomorrow), but I'm pretty sure that's
+something fairly trivial.
+
+As I said in my email earlier, send me your public key and I'll give you
+access.
+
+Simon
+
+
