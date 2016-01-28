@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_8ad1eccf",
+        "filename": "README",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2016-01-28T23:58:00Z",
+      "side": 1,
+      "message": "whitespace :-)",
+      "revId": "1be01486fd3cc8671675b5873729d77551b3032b",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_6acca836",
+        "filename": "manifests/init.pp",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2016-01-28T23:58:00Z",
+      "side": 1,
+      "message": "this isn\u0027t needed, the packages are in the standard nectar repos",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 3
+      },
+      "revId": "1be01486fd3cc8671675b5873729d77551b3032b",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
