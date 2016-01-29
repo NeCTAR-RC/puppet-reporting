@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_3d2668bb",
+        "filename": "files/reporting-key.asc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2016-01-29T05:05:39Z",
+      "side": 1,
+      "message": "Don\u0027t think this is needed any more either",
+      "revId": "76662dd0d0aac22ec6628d06c2c4ae401af6fd08",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
