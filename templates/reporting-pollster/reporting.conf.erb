@@ -18,3 +18,10 @@ username = <%= nova_user %>
 api_key = <%= nova_pass %>
 auth_url = <%= keystone_auth_url %>
 project_id = <%= pollster_tenant %>
+
+[databases]
+keystone = <%= keystone_db_name %>
+nova = <%= nova_db_name %>
+glance = <%= glance_db_name %>
+cinder = <%= cinder_db_name %>
+rcshibboleth = <%= rcshibboleth_db_name %>
