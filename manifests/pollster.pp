@@ -25,12 +25,22 @@ class reporting::pollster (
     ensure => installed,
   }
 
+  package {'mariadb-client':
+    ensure => installed,
+  }
+
   file {'/etc/reporting-pollster/reporting.conf':
     owner   => root,
     group   => root,
     mode    => '0600',
     content => template('reporting/reporting-pollster/reporting.conf.erb'),
     require => Package['python-reporting-pollster'],
+  }
+
+  exec { 'reporting-db-sync run':
+    command => "/usr/bin/reporting-db-sync --db-name=${db_name} --db-user=${db_user} --db-pass=${db_pass} --db-host=${db_host} --db-port=${db_port} --schema=/usr/share/doc/python-reporting-pollster/reporting_schema_nectar.sql.gz && touch /etc/reporting/reporting-db-sync.done",
+    creates => '/etc/reporting-pollster/reporting-db-sync.done',
+    require => Package['mariadb-client'],
   }
 }
 
