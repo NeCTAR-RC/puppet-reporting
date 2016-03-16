@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "bad4c104_4f6c449d",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000129
+      },
+      "writtenOn": "2016-03-16T05:52:05Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to assume that the hiera value will be something truth-y rather than a definite boolean value?",
+      "parentUuid": "bad4c104_cf5854fd",
+      "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad4c104_af6310b0",
         "filename": "manifests/pollster.pp",
         "patchSetId": 2
@@ -77,6 +95,24 @@
       "writtenOn": "2016-03-16T05:46:48Z",
       "side": 1,
       "message": "Perhaps use the stdlib function ensure_packages([\u0027mariadb-client\u0027]) here in case it is defined somewhere else in the catalogue.",
+      "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_6f69088b",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000129
+      },
+      "writtenOn": "2016-03-16T05:52:05Z",
+      "side": 1,
+      "message": "Sounds good to me.",
+      "parentUuid": "bad4c104_af6310b0",
       "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
       "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
       "unresolved": false
