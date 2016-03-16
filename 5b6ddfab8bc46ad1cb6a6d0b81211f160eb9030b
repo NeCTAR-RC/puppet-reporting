@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_afa070f5",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2016-03-16T04:50:36Z",
+      "side": 1,
+      "message": "What creates this file, and should it be required by this resource?",
+      "range": {
+        "startLine": 41,
+        "startChar": 157,
+        "endLine": 41,
+        "endChar": 228
+      },
+      "revId": "5b6ddfab8bc46ad1cb6a6d0b81211f160eb9030b",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_cfa5b405",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2016-03-16T04:50:36Z",
+      "side": 1,
+      "message": "should this be  /etc/reporting/reporting-db-sync.done ? or should that be changed to match this in the commmand?",
+      "revId": "5b6ddfab8bc46ad1cb6a6d0b81211f160eb9030b",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
