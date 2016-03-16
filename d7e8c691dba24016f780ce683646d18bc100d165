@@ -22,6 +22,30 @@
       "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
       "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_ef5d18eb",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000129
+      },
+      "writtenOn": "2016-03-16T05:46:08Z",
+      "side": 1,
+      "message": "Because this will be taking a hiera value, so I wanted to use str2bool() on it - the doco for str2bool reckoned it\u0027d error for anything other than the normal text truth-y values.",
+      "parentUuid": "bad4c104_6f52e8de",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
     }
   ]
 }
