@@ -18,14 +18,11 @@ class reporting::pollster (
   $nova_user,
   $nova_pass,
   $keystone_auth_url,
-  $pollster_tenant
+  $pollster_tenant,
+  $db_sync='no'
 ) inherits reporting {
 
   package {'python-reporting-pollster':
-    ensure => installed,
-  }
-
-  package {'mariadb-client':
     ensure => installed,
   }
 
@@ -37,10 +34,16 @@ class reporting::pollster (
     require => Package['python-reporting-pollster'],
   }
 
-  exec { 'reporting-db-sync run':
-    command => "/usr/bin/reporting-db-sync --db-name=${db_name} --db-user=${db_user} --db-pass=${db_pass} --db-host=${db_host} --db-port=${db_port} --schema=/usr/share/doc/python-reporting-pollster/reporting_schema_nectar.sql.gz && touch /etc/reporting/reporting-db-sync.done",
-    creates => '/etc/reporting-pollster/reporting-db-sync.done',
-    require => Package['mariadb-client'],
+  if (str2bool($db_sync)) {
+    ensure_packages(['mariadb-client'})
+
+    $done_file='/etc/reporting-pollster/reporting-db-sync.done'
+    $schema_file='/usr/share/doc/python-reporting-pollster/reporting_schema_nectar.sql.gz'
+    exec { 'reporting-db-sync run':
+      command => "/usr/bin/reporting-db-sync --db-name=${db_name} --db-user=${db_user} --db-pass=${db_pass} --db-host=${db_host} --db-port=${db_port} --schema=${schema_file} && touch ${done_file}",
+      creates => $done_file,
+      require => Package['mariadb-client', 'python-reporting-pollster'],
+    }
   }
 }
 
