@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_6f52e8de",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2016-03-16T05:42:37Z",
+      "side": 1,
+      "message": "why don\u0027t you just use false here?",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
