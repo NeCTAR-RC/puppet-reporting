@@ -46,6 +46,40 @@
       "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
       "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_cf5854fd",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2016-03-16T05:46:48Z",
+      "side": 1,
+      "message": "just use boolean in the first place",
+      "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_af6310b0",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2016-03-16T05:46:48Z",
+      "side": 1,
+      "message": "Perhaps use the stdlib function ensure_packages([\u0027mariadb-client\u0027]) here in case it is defined somewhere else in the catalogue.",
+      "revId": "d7e8c691dba24016f780ce683646d18bc100d165",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
     }
   ]
 }
