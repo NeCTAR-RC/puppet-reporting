@@ -4,7 +4,8 @@ class reporting::view (
   $path='',
   $admin_email='root@localhost',
   $api_host,
-  $api_port
+  $api_port,
+  $rcsbhibboleth_url,
 ) inherits reporting {
 
   package {'reporting-view':
