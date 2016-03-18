@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_4f2fe4a1",
+        "filename": "templates/reporting-view/config.js.erb",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2016-03-18T00:54:01Z",
+      "side": 1,
+      "message": "where is this variable defined?",
+      "range": {
+        "startLine": 4,
+        "startChar": 22,
+        "endLine": 4,
+        "endChar": 38
+      },
+      "revId": "0136f72fb844c25b9018f418db60e730e01c772d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
