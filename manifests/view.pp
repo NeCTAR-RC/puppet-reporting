@@ -5,7 +5,10 @@ class reporting::view (
   $admin_email='root@localhost',
   $api_host,
   $api_port,
+  $api_proto='http',
   $rcsbhibboleth_url,
+  $auth_role,
+  $auth_url,
 ) inherits reporting {
 
   package {'reporting-view':
@@ -22,6 +25,14 @@ class reporting::view (
     require => Package['reporting-view'],
   }
 
+  file {'/etc/reporting-view/reporting-view.conf':
+    owner   => root,
+    group   => root,
+    mode    => '0640',
+    content => template('reporting/reporting-view/reporting-view.conf.erb'),
+    require => Package['reporting-view'],
+  }
+
   apache::vhost {$host:
     serveradmin         => $admin_email,
     port                => 80,
@@ -29,8 +40,8 @@ class reporting::view (
     wsgi_script_aliases => { '/' => '/usr/share/reporting-view/reporting_view.py' },
     aliases             => [
       {
-        aliasmatch  => '/static',
-        path        => '/usr/share/reporting-view/static',
+        alias => '/static',
+        path  => '/usr/share/reporting-view/static',
       },
     ],
     directories         => [
