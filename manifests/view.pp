@@ -20,7 +20,7 @@ class reporting::view (
   file {'/etc/reporting-view/config.js':
     owner   => root,
     group   => root,
-    mode    => '0640',
+    mode    => '0644',
     content => template('reporting/reporting-view/config.js.erb'),
     require => Package['reporting-view'],
   }
@@ -28,7 +28,7 @@ class reporting::view (
   file {'/etc/reporting-view/reporting-view.conf':
     owner   => root,
     group   => root,
-    mode    => '0640',
+    mode    => '0644',
     content => template('reporting/reporting-view/reporting-view.conf.erb'),
     require => Package['reporting-view'],
   }
