@@ -22,9 +22,7 @@ class reporting::pollster (
   $db_sync=false
 ) inherits reporting {
 
-  package {'python-reporting-pollster':
-    ensure => installed,
-  }
+  ensure_packages(['python-reporting-pollster', 'mariadb-client'], {'ensure' => 'installed'})
 
   file {'/etc/reporting-pollster/reporting.conf':
     owner   => root,
@@ -35,7 +33,6 @@ class reporting::pollster (
   }
 
   if $db_sync {
-    ensure_packages(['mariadb-client'])
 
     $done_file='/etc/reporting-pollster/reporting-db-sync.done'
     $schema_file='/usr/share/doc/python-reporting-pollster/reporting_schema_nectar.sql.gz'
