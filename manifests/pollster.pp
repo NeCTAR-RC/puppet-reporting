@@ -26,6 +26,10 @@ class reporting::pollster (
     ensure => installed,
   }
 
+  package {'mysql-client':
+    ensure => installed,
+  }
+
   file {'/etc/reporting-pollster/reporting.conf':
     owner   => root,
     group   => root,
