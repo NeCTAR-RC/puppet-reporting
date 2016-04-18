@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_994da875",
+        "filename": "manifests/pollster.pp",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2016-04-18T22:52:24Z",
+      "side": 1,
+      "message": "this is the default option, so I\u0027d omit it",
+      "range": {
+        "startLine": 25,
+        "startChar": 65,
+        "endLine": 25,
+        "endChar": 92
+      },
+      "revId": "1e1232187d817f46c3941e5b1d42dd571de2b2d9",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
