@@ -1,5 +1,5 @@
 var Config = {
-    baseURL    : 'http://<%= host %>/<%= path %>', // where this code runs
+    baseURL    : '<%= proto %>://<%= host %>:<%= external_port %>/<%= path %>', // where this code runs
     endpoint   : '<%= api_proto %>://<%= api_host %>:<%= api_port %>', // reporting api base url
     rcshib_url : '<%= rcshibboleth_url %>', // rcshibboleth auth server
 };
