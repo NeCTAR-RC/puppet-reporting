@@ -6,7 +6,7 @@ class reporting::view (
   $api_host,
   $api_port,
   $api_proto='http',
-  $rcsbhibboleth_url,
+  $rcshibboleth_url,
   $auth_role,
   $auth_url,
 ) inherits reporting {
