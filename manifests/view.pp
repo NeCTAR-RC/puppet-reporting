@@ -27,8 +27,6 @@ class reporting::view (
     ensure => installed,
   }
 
-  class { 'apache::mod::wsgi': }
-
   file {'/etc/reporting-view/config.js':
     owner   => root,
     group   => root,
@@ -45,25 +43,4 @@ class reporting::view (
     require => Package['reporting-view'],
   }
 
-  apache::vhost {$host:
-    serveradmin         => $admin_email,
-    port                => $port,
-    docroot             => '/var/lib/www',
-    wsgi_script_aliases => { '/' => '/usr/share/reporting-view/reporting_view.py' },
-    aliases             => [
-      {
-        alias => '/static',
-        path  => '/usr/share/reporting-view/static',
-      },
-    ],
-    directories         => [
-      {
-        path => '/usr/share/reporting-view'
-      },
-      {
-        path    => '/usr/share/reporting-view/static',
-        options => ['-Indexes']
-      },
-    ],
-  }
 }
