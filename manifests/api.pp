@@ -11,6 +11,7 @@ class reporting::api (
   $admin_user,
   $admin_pass,
   $admin_tenant,
+  $ssl_pem="",
   $auth_role
 ) inherits reporting {
 
