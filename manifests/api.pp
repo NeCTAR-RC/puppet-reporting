@@ -19,6 +19,12 @@ class reporting::api (
     ensure => installed,
   }
 
+  service {'reporting-api':
+    ensure    => running,
+    require   => Package['python-reporting-api'],
+    subscribe => File['/etc/reporting-api/paste.config'],
+  }
+
   file {'/etc/reporting-api/apiv1.ini':
     owner   => root,
     group   => root,

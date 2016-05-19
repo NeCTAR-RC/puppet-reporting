@@ -24,6 +24,12 @@ class reporting::pollster (
 
   ensure_packages(['python-reporting-pollster', 'mariadb-client'])
 
+  service {'reporting-pollster':
+    ensure    => running,
+    require   => Package['python-reporting-pollster'],
+    subscribe => File['/etc/reporting-pollster/reporting.conf'],
+  }
+
   file {'/etc/reporting-pollster/reporting.conf':
     owner   => root,
     group   => root,
