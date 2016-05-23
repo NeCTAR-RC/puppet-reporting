@@ -11,7 +11,7 @@
 class reporting::view (
   $host='localhost',
   $port=80,
-  $external_port='',
+  $external_port=undef,
   $proto='http',
   $path='',
   $admin_email='root@localhost',
