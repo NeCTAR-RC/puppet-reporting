@@ -15,6 +15,7 @@ class reporting::pollster (
   $glance_db_name='glance',
   $cinder_db_name='cinder',
   $rcshibboleth_db_name='rcshibboleth',
+  $dashboard_db_name='dashboard',
   $nova_user,
   $nova_pass,
   $keystone_auth_url,
