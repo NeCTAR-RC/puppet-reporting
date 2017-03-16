@@ -1,28 +1,28 @@
 [remote]
-user = <%= source_db_user %>
-passwd = <%= source_db_pass %>
-database = <%= source_db_name %>
-host = <%= source_db_host %>
-port = <%= source_db_port %>
+user = <%= @source_db_user %>
+passwd = <%= @source_db_pass %>
+database = <%= @source_db_name %>
+host = <%= @source_db_host %>
+port = <%= @source_db_port %>
 
 [local]
-user = <%= db_user %>
-passwd = <%= db_pass %>
-host = <%= db_host %>
-port = <%= db_port %>
-database = <%= db_name %>
+user = <%= @db_user %>
+passwd = <%= @db_pass %>
+host = <%= @db_host %>
+port = <%= @db_port %>
+database = <%= @db_name %>
 
 [nova]
 version = 2
-username = <%= nova_user %>
-api_key = <%= nova_pass %>
-auth_url = <%= keystone_auth_url %>
-project_id = <%= pollster_tenant %>
+username = <%= @nova_user %>
+api_key = <%= @nova_pass %>
+auth_url = <%= @keystone_auth_url %>
+project_id = <%= @pollster_tenant %>
 
 [databases]
-keystone = <%= keystone_db_name %>
-nova = <%= nova_db_name %>
-glance = <%= glance_db_name %>
-cinder = <%= cinder_db_name %>
-rcshibboleth = <%= rcshibboleth_db_name %>
-dashboard = <%= dashboard_db_name %>
+keystone = <%= @keystone_db_name %>
+nova = <%= @nova_db_name %>
+glance = <%= @glance_db_name %>
+cinder = <%= @cinder_db_name %>
+rcshibboleth = <%= @rcshibboleth_db_name %>
+dashboard = <%= @dashboard_db_name %>
