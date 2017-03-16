@@ -1,18 +1,18 @@
 [database]
-username = <%= db_user %>
-password = <%= db_pass %>
-hostname = <%= db_host %>
-dbname = <%= db_name %>
+username = <%= @db_user %>
+password = <%= @db_pass %>
+hostname = <%= @db_host %>
+dbname = <%= @db_name %>
 
 [authorisation]
 # Specify the keystone role that allows access to the system
 # leaving this empty cause authorisation to be ignored
-required_role = <%= auth_role %>
+required_role = <%= @auth_role %>
 
 [keystone_authtoken]
-auth_uri = <%= keystone_auth_url %>
-identity_uri = <%= keystone_identity_url %>
-admin_user = <%= admin_user %>
-admin_password = <%= admin_pass %>
-admin_tenant_name = <%= admin_tenant %>
+auth_uri = <%= @keystone_auth_url %>
+identity_uri = <%= @keystone_identity_url %>
+admin_user = <%= @admin_user %>
+admin_password = <%= @admin_pass %>
+admin_tenant_name = <%= @admin_tenant %>
 

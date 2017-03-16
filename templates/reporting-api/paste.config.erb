@@ -45,8 +45,8 @@ use = egg:Paste#urlmap
 
 [server:main]
 use = egg:Paste#http
-host = <%= api_host %>
-port = <%= api_port %>
+host = <%= @api_host %>
+port = <%= @api_port %>
 <%- if @ssl_pem -%>
-ssl_pem = <%= ssl_pem %>
+ssl_pem = <%= @ssl_pem %>
 <%- end -%>
