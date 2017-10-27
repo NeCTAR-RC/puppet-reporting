@@ -17,9 +17,11 @@ class reporting::pollster (
   $rcshibboleth_db_name='rcshibboleth',
   $dashboard_db_name='dashboard',
   $nova_user,
+  $nova_user_domain='Default',
   $nova_pass,
   $keystone_auth_url,
   $pollster_tenant,
+  $pollster_project_domain='Default',
   $db_sync=false
 ) inherits reporting {
 
