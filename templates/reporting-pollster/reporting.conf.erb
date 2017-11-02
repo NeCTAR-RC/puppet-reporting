@@ -15,11 +15,11 @@ database = <%= @db_name %>
 [nova]
 version = 2
 username = <%= @nova_user %>
-user_domain_name = <% @nova_user_domain %>
+user_domain_name = <%= @nova_user_domain %>
 api_key = <%= @nova_pass %>
 auth_url = <%= @keystone_auth_url %>
 project_name = <%= @pollster_tenant %>
-project_domain_name = <% @pollster_project_domain %>
+project_domain_name = <%= @pollster_project_domain %>
 
 [databases]
 keystone = <%= @keystone_db_name %>
